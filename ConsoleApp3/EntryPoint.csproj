@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Homework1\Homework1.csproj" />
     <ProjectReference Include="..\Homework2\Homework2.csproj" />
+    <ProjectReference Include="..\Homework3\Homework3.csproj" />
+    <ProjectReference Include="..\Homework4\Homework4.csproj" />
+    <ProjectReference Include="..\Homework5\Homework5.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,6 +8,8 @@ namespace Homework1
 {
     public class HW1
     {
+
+        //Пользователь вводит 2 числа (A и B). Выведите в консоль решение 5*A+B2B-A
         public void SolveTask1()
         {
             int a = GetNumberFromUser("Введите число а:");
@@ -30,6 +32,7 @@ namespace Homework1
         }
 
 
+        //Пользователь вводит 2 строковых значения(A и B). Поменяйте содержимое переменных A и B местами.
 
         public void SolveTask2()
         {
@@ -55,6 +58,7 @@ namespace Homework1
         }
 
 
+        //Пользователь вводит 2 числа (A и B). Выведите в консоль результат деления A на B и остаток от деления.
 
         public void SolveTask3()
         {
@@ -65,23 +69,26 @@ namespace Homework1
             double result2 = CalkFormula4(operand1, operand2);
             Console.WriteLine($"остаток от деления: {result2}");
         }
-        private int GetNumberOfUser1(string message)
+        public int GetNumberOfUser1(string message)
         {
             Console.WriteLine(message);
             int number = Convert.ToInt32(Console.ReadLine());
             return number;
         }
-        private int CalkFormula3(int operand1, int operand2)
+        public int CalkFormula3(int operand1, int operand2)
         {
             int result1 = (operand1) / (operand2);
             return result1;
         }
-        private double CalkFormula4(int operand1, int operand2)
+        public double CalkFormula4(int operand1, int operand2)
         {
             double result2 = (operand1) % (operand2);
             return result2;
         }
-                
+
+
+       // Пользователь вводит 3 не равных 0 числа(A, B и С). Выведите в консоль решение(значение X) линейного уравнения стандартного вида, где A* X+B=C.
+
         public void SolveTask4()
         {
             int operand1 = GetNumberOfUser2("Введите число А");
@@ -90,46 +97,48 @@ namespace Homework1
             double result = CalkFormula2(operand1, operand2, operand3);
             Console.WriteLine($"результат четвертой задачи {result}");
         }
-        private int GetNumberOfUser2(string message)
+        public int GetNumberOfUser2(string message)
         {
             Console.WriteLine(message);
             int number = Convert.ToInt32(Console.ReadLine());
             return number;
         }
-        private double CalkFormula2(int operand1, int operand2, int operand3)
+        public double CalkFormula2(int operand1, int operand2, int operand3)
         {
             double result = (operand3 - operand2) / operand1;
             return result;
         }
 
-       
+
+       // Пользователь вводит 4 числа (X1, Y1, X2, Y2), описывающие координаты 2-х точек на координатной плоскости. Выведите уравнение прямой в формате Y=AX+B, проходящей через эти точки.
         public void SolveTask5()
         {
-            int coordX1 = GetNumberOfUser5("введите координату Х1");
-            int coordX2 = GetNumberOfUser5("введите координату Х2");
-            int coordY1 = GetNumberOfUser5("введите координату Y1");
-            int coordY2 = GetNumberOfUser5("введите координату Y2");
-            int calculationResult1 = CalkFormula5(coordX1, coordX2, coordY1, coordY2);
-            int calculationResult2 = CalkFormula6(coordX1, coordX2, coordY1, coordY2);
-            Console.WriteLine($"Результат пятой задачи: y= {calculationResult1} *x + {calculationResult2}");
+            int X1 = GetNumberOfUser5("введите координату Х1");
+            int X2 = GetNumberOfUser5("введите координату Х2");
+            int Y1 = GetNumberOfUser5("введите координату Y1");
+            int Y2 = GetNumberOfUser5("введите координату Y2");
+            double k = CalkFormula5(X1, X2, Y1, Y2);
+            double b = CalkFormula6(X1, X2, Y1, Y2);
+            Console.WriteLine($"Результат пятой задачи: y= {k} *x + {b}");
         }
-        private int GetNumberOfUser5(string message)
+        public int GetNumberOfUser5(string message)
         {
             Console.WriteLine(message);
             int number = Convert.ToInt32(Console.ReadLine());
             return number;
         }
-        private int CalkFormula5(int coordX1, int coordX2, int coordY1, int coordY2)
+        public int CalkFormula5(int X1, int X2, int Y1, int Y2)
         {
-            int calculationResult1 = (coordY2 - coordY1) / (coordX2 - coordX1);
-            return calculationResult1;
+            double k = (Y1 - Y2) * 1.0 / (X1 - X2);
+            
+            return  k;
 
         }
-        private int CalkFormula6(int coordX1, int coordX2, int coordY1, int coordY2)
+        public int CalkFormula6(int X1, int X2, int Y1, int Y2)
         {
-            int calcu = (coordY2 - coordY1) / (coordX2 - coordX1);
-            int calculationResult2 = (coordY1 - calcu * coordX1);
-            return calculationResult2;
+            double b = Y2 - k * X2;
+            
+            return  b;
         }
     }
 
